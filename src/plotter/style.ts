@@ -21,17 +21,18 @@ export default {
   --width: ${ width }px;
   display: block;
   height: var(--height);
-  max-height: var(--height);
-  max-width: var(--width);
-  min-height: var(--height);
-  min-width: var(--width);
   width: var(--width);
 }
 
 *.container {
-  height: 100%;
+  height: var(--height);
+  max-height: var(--height);
+  max-width: var(--width);
+  min-height: var(--height);
+  min-width: var(--width);
+  overflow: hidden;
   position: relative;
-  width: 100%;
+  width: var(--width);
 }
 
 *.container:focus {
@@ -78,8 +79,22 @@ export default {
   top: 0px;
 }
 
+*.input-path,
+*.input-temp-path {
+  fill: none;
+  stroke: rgb(35, 197, 185);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.1;
+}
 
+*.input-temp-path {
+  stroke-opacity: 0.5;
+}
 
+*.input-temp-point {
+  fill: rgb(35, 197, 185);
+}
 
 
 
@@ -122,7 +137,7 @@ export default {
 };
 
 function createGridRulesImage(): string {
-  const svg: string = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
   <path
   d="M 0 4 L 0 0 L 4 0 M 12 0 L 16 0 L 16 4 M 16 12 L 16 16 L 12 16 M 4 16 L 0 16 L 0 12"
   fill="none"
