@@ -7,15 +7,27 @@
 import { Plotter } from "./dist/plotter/index.js";
 customElements.define("ixi-plotter", Plotter);
 
+const test1 = document.getElementById("test1");
+
+
     </script>
   </head>
   <body>
+    <p></p>
     <div>
       <ixi-plotter
         cell-size="32"
         columns="16"
         rows="16"
+        snap-to-grid
+        id="test1"
       ></ixi-plotter>
+      <dl>
+        <div>
+          <dt></dt>
+          <dd><output id="out"></output></dd>
+        </div>
+      </dl>
     </div>
   </body>
 </html>

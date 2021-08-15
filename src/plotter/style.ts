@@ -73,7 +73,6 @@ export default {
   bottom: 0px;
   left: 0px;
   overflow: hidden;
-  pointer-events: none;
   position: absolute;
   right: 0px;
   top: 0px;
@@ -93,9 +92,10 @@ export default {
   top: 0px;
 }
 
-*.overlay__exterior {
-  background-color: #0008;
-  clip-path: path("M 0 0 L ${ width } 0 L ${ width } ${ height } L 0 ${ height } z M ${ canvasX } ${ canvasY } L ${ canvasX } ${ canvasY2 } L ${ canvasX2 } ${ canvasY2 } L ${ canvasX2 } ${ canvasY } z");
+*.overlay__grid-rules {
+  background-image: ${ createGridRulesImage() };
+  background-position: 0px 0px;
+  background-size: ${ cellSize }px ${ cellSize }px;
   bottom: 0px;
   left: 0px;
   position: absolute;
@@ -103,10 +103,9 @@ export default {
   top: 0px;
 }
 
-*.overlay__grid-rules {
-  background-image: ${ createGridRulesImage() };
-  background-position: 0px 0px;
-  background-size: ${ cellSize }px ${ cellSize }px;
+*.overlay__exterior {
+  background-color: #0008;
+  clip-path: path("M 0 0 L ${ width } 0 L ${ width } ${ height } L 0 ${ height } z M ${ canvasX } ${ canvasY } L ${ canvasX } ${ canvasY2 } L ${ canvasX2 } ${ canvasY2 } L ${ canvasX2 } ${ canvasY } z");
   bottom: 0px;
   left: 0px;
   position: absolute;
